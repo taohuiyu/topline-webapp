@@ -1,0 +1,24 @@
+.van-nav-bar {
+  height: 128px;
+  background-color: #3296fa;
+}
+.van-nav-bar .van-nav-bar__title {
+  color: #fff;
+  font-size: 32px;
+  padding: 65px;
+}
+.van-cell__title {
+  padding-left: 20px;
+}
+.van-cell__value {
+  padding-left: 103px;
+}
+.van-cell {
+  height: 90px;
+  font-size: 26px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.van-button {
+  height: 88px;
+  font-size: 30px;
+}
