@@ -7,29 +7,29 @@
     finished-text="没有更多了"
     @load="onLoad">
       <van-cell
-      v-for="comment in list"
-      :key="comment.com_id.toString()"
-      :title="comment.aut_name">
+      v-for="(item,index) in list"
+      :key="index"
+      :title="item.aut_name">
         <van-image
           slot="icon"
           round
           width="30"
           height="30"
           style="margin-right: 10px;"
-          :src="comment.aut_photo"
+          :src="item.aut_photo"
         />
-        <span style="color: #466b9d;" slot="title">{{ comment.aut_name }}</span>
+        <span style="color: #466b9d;" slot="title">hello</span>
         <div slot="label">
-          <p style="color: #363636;">{{ comment.content }}</p>
+          <p style="color: #363636;">{{ item.content }}</p>
           <p>
-            <span style="margin-right: 10px;">{{ comment.pubdate | relativeTime }}</span>
-            <van-button size="mini" type="default">回复</van-button>
+            <span style="margin-right: 10px;">{{ item.pubdate | relativeTime }}</span>
+            <van-button size="mini" type="default">回复{{item.reply_count}}</van-button>
           </p>
         </div>
         <van-icon
         slot="right-icon"
-        name="like-o"
-        @click="onCommentLike"/>
+        :name="item.is_liking? 'like':'like-o'"
+        @click="onCommentLike(item)"/>
       </van-cell>
     </van-list>
     <!-- 评论列表 -->
