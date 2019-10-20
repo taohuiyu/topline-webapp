@@ -53,7 +53,7 @@
 <script>
 // 登录处理函数
 import { login } from '@/api/user'
-
+import { setItem } from '@/utils/storage'
 export default {
   name: 'LoginIndex',
   data () {
@@ -86,6 +86,8 @@ export default {
         this.$toast.success('登录成功')
         // 登陆成功以后将数据存储到容器中
         this.$store.commit('setUser', data.data)
+        // 为了防止页面刷新数据丢失，将数据存储到本地存储
+        setItem('user', data.data)
       } catch (err) {
         toast.clear()
         if (err.response && err.response.status === 400) {

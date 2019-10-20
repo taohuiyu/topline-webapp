@@ -23,7 +23,8 @@ import {
   Image,
   Lazyload,
   Popup,
-  Search
+  Search,
+  Loading
 } from 'vant'
 // 表单验证
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'// 核心组件
@@ -70,6 +71,7 @@ Vue
   .use(Lazyload)
   .use(Popup)
   .use(Search)
+  .use(Loading)
 Vue.config.productionTip = false
 new Vue({
   router,
